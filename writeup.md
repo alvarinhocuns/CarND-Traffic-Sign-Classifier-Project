@@ -26,7 +26,7 @@ The goals / steps of this project are the following:
 [image9]: ./traffic-sings-data/GTSRB/roundabout.ppm "Signal4"
 [image10]: ./traffic-sings-data/GTSRB/stop.ppm "Signal5"
 [image11]: ./traffic-sings-data/GTSRB/works.ppm "Signal6"
-[image12]: ./results/step5-Performance.png "Performance"
+[image12]: ./results/step5-performance.png "Performance"
 [image13]: ./results/step4-image.png "Truck"
 [image14]: ./results/step4-conv1.png "conv1"
 
@@ -183,11 +183,13 @@ The model was able to correctly guess 5 of the 6 traffic signs, which gives an a
 The next image shows the highest 5 probabilities for each image class in semilogarithmic scale. Classes 17, 9, 14 and 25 are predicted with a very high probability, being the second highest probability class much lower than the correct one.
 Class 40 (Roundabout) is predicted with a high accuracy, but the second highest class (12-priority road) presents a quite high probability compared with the other results, so I would expect to find some bad predictions in a larger sample.
 Finally, class 2 (speed limit 50 km/h) is predicted as class 1 (speed limit 30 km/h) and the other probabilities are also quite high. It is remarkable that the correct class isn't among the 5 highest probabilities despite of being a quite good image. This case should be studied and corrected.
+
 ![alt text][image12]
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 The next pictures represent the initial image fed to the model and the output of the first layer. From latter we can see that the model is looking for a circle with some kind of figure inside. In feature map 4 we could even see a truck in the center of the picture.
+
 ![alt text][image13]
 ![alt text][image14]
