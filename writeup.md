@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image2]: ./results/step1-randomImages.png "Random images"
 [image3]: ./results/step1-gray.png "Gray scale"
 [image4]: ./results/step2-PrecisionRecall.png "Precision and Recall"
-[image5]: ./results/step1-step1-randomAugmented.png "Augmenting"
+[image5]: ./results/step1-randomAugmented.png "Augmenting"
 [image6]: ./CarND-Traffic-Sign-Classifier-Project/traffic-sings-data/forbiddendir.ppm "Signal1"
 [image7]: ./CarND-Traffic-Sign-Classifier-Project/traffic-sings-data/max50.ppm "Signal2"
 [image8]: ./CarND-Traffic-Sign-Classifier-Project/traffic-sings-data/pass.ppm "Signal3"
@@ -112,32 +112,40 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+
   The first architecture that I used was the LeNet-5 used in the last project of the course. I chose this architecture because some of the recommended papers for the project used it and they got very good results
   
 * What were some problems with the initial architecture?
+
   The only issue that I found is that the architecture over fitted, so I had to include more layers.
   
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+
   At first moment, the architecture over fitted, so I decided to include one dropout step at the beginning, and finally two dropout layers. The first one is located between layer3 and layer4, and the second one between layer4 and the output layer.
   
 * Which parameters were tuned? How were they adjusted and why?
+
   The parameters tuned were:
   ** Keep probability: Ranging from 0.4 and 0.5. The final result was 0.5
   ** Learning rate: Ranging from 0.0005 and 0.002. The final result was 0.001
   ** Number of epochs: The final result was 20.
   
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+
   I decided to use a convolutional architecture because they were used many times to recognize patterns with large variability, such as handwritten characters. So I would expect them to work better in this case.
   The dropout later helps to fit the general LeNet-5 architecture to our sample.
   
 If a well known architecture was chosen:
 * What architecture was chosen?
+
 The architecture chosen was the LeNet-5.
 
 * Why did you believe it would be relevant to the traffic sign application?
+
 As I already commented, the convolutional layers are specifically designed to recognize patterns and the LeNet architecture was successfully implemented to recognize handwritten characters. Since the traffic signs present a much lower variability than the handwritten characters, and each type send a very clear information, I think that they can be successfully used also to this problem.
 
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+
 The model was trained using the training sample, and the accuracy obtained is high. Since the same model applied to a different data set, in this case the validation dataset, is also high, we can assume that the model is working well. Nevertheless, since we are trying to optimize the accuracy in the validation dataset and we are modifying the model to reach this goal, it is possible that it can learn also about the validation dataset. Because of this, we apply the model also to a third dataset, the test set. Since the accuracy is also very high in this third sample we can assume that it is working properly.
 
 
